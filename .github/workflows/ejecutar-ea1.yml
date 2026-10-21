@@ -21,6 +21,11 @@ concurrency:
 jobs:
   ejecutar-notebook:
     runs-on: ubuntu-latest
+    env:
+      HF_HUB_DISABLE_PROGRESS_BARS: "1"
+      HF_DATASETS_DISABLE_PROGRESS_BARS: "1"
+      HF_HUB_VERBOSITY: "error"
+      PYTHONWARNINGS: "ignore:IProgress not found"
 
     steps:
       - name: Descargar repositorio
