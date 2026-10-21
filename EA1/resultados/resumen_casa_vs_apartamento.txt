@@ -1,0 +1,42 @@
+Resumen: precio m2 casa vs apartamento en ciudades de Colombia (2026)
+======================================================================
+Generado: 2026-10-21 14:35
+
+DIMENSIONES
+Filas: 38
+Columnas: 5
+Filas duplicadas: 0
+
+COLUMNAS Y TIPOS DE DATO
+- ciudad: object
+- diferencia_casa_vs_apto_pct: float64
+- precio_casa_m2_millones: float64
+- precio_apto_m2_millones: float64
+- tipo_mas_economico: object
+
+VALORES NULOS POR COLUMNA
+- ciudad: 0
+- diferencia_casa_vs_apto_pct: 0
+- precio_casa_m2_millones: 0
+- precio_apto_m2_millones: 0
+- tipo_mas_economico: 0
+Total de valores nulos: 0
+
+ESTADÍSTICAS DESCRIPTIVAS (columnas numéricas)
+       diferencia_casa_vs_apto_pct  precio_casa_m2_millones  precio_apto_m2_millones
+count                        38.00                    38.00                    38.00
+mean                        -17.43                     4.44                     5.49
+std                          16.57                     1.28                     1.58
+min                         -59.98                     2.45                     3.39
+25%                         -26.87                     3.47                     4.27
+50%                         -18.09                     4.12                     5.40
+75%                          -7.46                     5.32                     6.31
+max                          20.66                     7.84                     9.32
+
+PRIMERAS 5 FILAS
+         ciudad  diferencia_casa_vs_apto_pct  precio_casa_m2_millones  precio_apto_m2_millones tipo_mas_economico
+    Santa Marta                       -59.98                     3.49                     8.72               Casa
+      Cartagena                       -45.31                     4.30                     7.86               Casa
+        Palmira                       -41.51                     2.45                     4.19               Casa
+         Bogotá                       -35.46                     4.69                     7.26               Casa
+Puerto Colombia                       -32.88                     3.94                     5.87               Casa
