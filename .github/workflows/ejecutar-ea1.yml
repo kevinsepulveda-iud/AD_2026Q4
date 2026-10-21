@@ -1,0 +1,58 @@
+name: Ejecutar EA1
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "EA1/**.py"
+      - "EA1/**.ipynb"
+      - "requirements.txt"
+      - ".github/workflows/ejecutar-ea1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ejecutar-ea1
+  cancel-in-progress: false
+
+jobs:
+  ejecutar-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Ejecutar el notebook de la EA1
+        working-directory: EA1
+        run: |
+          jupyter nbconvert --to notebook --execute --inplace \
+            --ExecutePreprocessor.timeout=900 \
+            EA1_carga_y_resumen.ipynb
+
+      - name: Guardar resultados en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add EA1/EA1_carga_y_resumen.ipynb EA1/resultados
+          if git diff --cached --quiet; then
+            echo "No hubo cambios."
+            exit 0
+          fi
+          git commit -m "Ejecución automática EA1: notebook con resultados y resumen .txt [skip ci]"
+          git push origin HEAD:main
