@@ -1,71 +1,49 @@
-# AE2 – Manejo de archivos CSV, JSON y TXT
+# EA2 – Manejo de archivos CSV, JSON y TXT
 
-Analítica de Datos – IU Digital de Antioquia · PREICA2602B020125 · Kevin Daniel Sepúlveda Giraldo
+Kevin Daniel Sepúlveda Giraldo · Analítica de Datos · PREICA2602B020125
 
-## Archivos de origen (descargados de Hugging Face)
+## Archivos de origen
 
-| Formato | Dataset | URL de origen | Copia local |
-|---|---|---|---|
-| CSV | Barrios más baratos para arrendar en Colombia (2026) | https://huggingface.co/datasets/aptologia/barrios-mas-baratos-para-arrendar-colombia-2026/blob/main/data/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv | `datos/originales/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv` |
-| JSON | Colección numismática colombiana | https://huggingface.co/datasets/Vault-of-History/colombian-numismatic-collection/blob/main/colombian-coins.json | `datos/originales/colombian-coins.json` |
-
-Conservo los originales sin cambios y guardo las versiones modificadas en `datos/modificados/`.
+| Formato | Dataset | Original |
+|---|---|---|
+| CSV | [Barrios más baratos para arrendar en Colombia (2026)](https://huggingface.co/datasets/aptologia/barrios-mas-baratos-para-arrendar-colombia-2026/blob/main/data/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv) | `datos/originales/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv` |
+| JSON | [Colección numismática colombiana](https://huggingface.co/datasets/Vault-of-History/colombian-numismatic-collection/blob/main/colombian-coins.json) | `datos/originales/colombian-coins.json` |
 
 ## Estructura
 
 ```
 AE2/
-├── manejador_csv.py           Clase ManejadorCSV (csv.reader / csv.writer)
-├── manejador_json.py          Clase ManejadorJSON (json.load / json.dump)
-├── generador_resumen_txt.py   Clase GeneradorResumenTXT (crea resumen.txt)
-├── AE2_manejo_archivos.ipynb  Notebook que coordina el flujo
-├── resumen.txt                Resumen generado por la ejecución
+├── manejador_csv.py           ManejadorCSV (csv.reader / csv.writer)
+├── manejador_json.py          ManejadorJSON (json.load / json.dump)
+├── generador_resumen_txt.py   GeneradorResumenTXT
+├── AE2_manejo_archivos.ipynb
+├── resumen.txt
 └── datos/
-    ├── originales/            CSV y JSON tal como se descargaron
-    └── modificados/           CSV y JSON nuevos con los cambios
+    ├── originales/
+    └── modificados/
 ```
 
-## Clases y métodos
+## Cambios
 
-**`ManejadorCSV`**: `importar()`, `vista_previa()`, `agregar_columna()`, `actualizar_valor()`, `eliminar_filas()`, `guardar()`, `informe()`
+| Archivo | Cambio | Filas / registros |
+|---|---|---|
+| CSV | Nueva columna `canon_millones` | 145 |
+| CSV | `Bogotá` → `Bogotá D.C.` | 34 |
+| CSV | Eliminar barrios con menos de 35 avisos | 145 → 125 |
+| JSON | Nuevo campo `antiguedad_anios` | 14 |
+| JSON | `No longer in circulation` → `Fuera de circulación` | 14 |
+| JSON | Eliminar campo `photo` | 14 |
 
-**`ManejadorJSON`**: `importar()`, `vista_previa()`, `agregar_campo()`, `actualizar_valor()`, `eliminar_campo()`, `guardar()`, `informe()`
+## Ejecución
 
-**`GeneradorResumenTXT`**: `agregar_informe()`, `generar_texto()`, `guardar()`
-
-## Modificaciones realizadas
-
-**CSV:** agregué la columna `canon_millones`, cambié `Bogotá` por `Bogotá D.C.` y eliminé los barrios con menos de 35 avisos, porque con pocos anuncios la mediana del canon es menos confiable.
-
-**JSON:** agregué el campo `antiguedad_anios`, cambié el estado `No longer in circulation` por `Fuera de circulación` y eliminé el campo `photo`, que solo es el nombre de una foto que no viene en el dataset.
-
-## Pasos de ejecución
-
-### Opción 1: automática (GitHub Actions)
-Configuré el workflow `.github/workflows/ejecutar-ae2.yml` para que, cada vez que subo cambios a la carpeta `AE2`, ejecute el notebook con
-Python 3.12 y guarde en el repositorio el notebook con resultados, los archivos modificados y `resumen.txt`.
-También se puede lanzar desde **Actions → Ejecutar AE2 → Run workflow**.
-
-### Opción 2: local
 ```bash
-git clone https://github.com/kevinsepulveda-iud/AD_2026Q4.git
-cd AD_2026Q4
 python -m pip install -r requirements.txt
 cd AE2
 jupyter notebook AE2_manejo_archivos.ipynb
 ```
-Ejecutar todas las celdas en orden (**Kernel → Restart & Run All**). Las rutas son relativas a la carpeta `AE2`.
-Solo se usan las librerías estándar `csv`, `json` y `pathlib`.
 
-## Uso de inteligencia artificial
+Ejecutar todas las celdas en orden. Solo usa `csv`, `json` y `pathlib`.
 
-De acuerdo con el reglamento estudiantil, declaro que en este trabajo usé **Claude (Anthropic)** como asistente de
-inteligencia artificial para:
+## Uso de IA
 
-- Proponer la estructura de las clases y escribir una primera versión del código.
-- Revisar errores y probar el flujo completo.
-- Redactar la documentación (README y explicaciones de los notebooks).
-- Configurar la ejecución automática con GitHub Actions.
-
-Revisé, ejecuté y entiendo todo el código entregado. La elección de los datasets, las transformaciones aplicadas
-y los resultados los verifiqué antes de hacer la entrega.
+Usé Claude (Anthropic) como apoyo para el código y la documentación. Revisé y probé todo lo entregado.
