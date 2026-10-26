@@ -1,15 +1,15 @@
 # AE2 – Manejo de archivos CSV, JSON y TXT
 
-Analítica de Datos – IU Digital de Antioquia · PREICA2602B020125 · AE_Grupo 12
+Analítica de Datos – IU Digital de Antioquia · PREICA2602B020125 · Kevin Daniel Sepúlveda Giraldo
 
-## Archivos de origen (descargados manualmente de Hugging Face)
+## Archivos de origen (descargados de Hugging Face)
 
 | Formato | Dataset | URL de origen | Copia local |
 |---|---|---|---|
 | CSV | Barrios más baratos para arrendar en Colombia (2026) | https://huggingface.co/datasets/aptologia/barrios-mas-baratos-para-arrendar-colombia-2026/blob/main/data/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv | `datos/originales/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv` |
 | JSON | Colección numismática colombiana | https://huggingface.co/datasets/Vault-of-History/colombian-numismatic-collection/blob/main/colombian-coins.json | `datos/originales/colombian-coins.json` |
 
-Los originales no se modifican. Las versiones modificadas se guardan en `datos/modificados/`.
+Conservo los originales sin cambios y guardo las versiones modificadas en `datos/modificados/`.
 
 ## Estructura
 
@@ -35,15 +35,15 @@ AE2/
 
 ## Modificaciones realizadas
 
-**CSV:** se agrega la columna `canon_millones`, se cambia `Bogotá` por `Bogotá D.C.` y se eliminan los barrios con menos de 35 avisos.
+**CSV:** agregué la columna `canon_millones`, cambié `Bogotá` por `Bogotá D.C.` y eliminé los barrios con menos de 35 avisos, porque con pocos anuncios la mediana del canon es menos confiable.
 
-**JSON:** se agrega el campo `antiguedad_anios`, se cambia el estado `No longer in circulation` por `Fuera de circulación` y se elimina el campo `photo`.
+**JSON:** agregué el campo `antiguedad_anios`, cambié el estado `No longer in circulation` por `Fuera de circulación` y eliminé el campo `photo`, que solo es el nombre de una foto que no viene en el dataset.
 
 ## Pasos de ejecución
 
 ### Opción 1: automática (GitHub Actions)
-Al subir cambios a la carpeta `AE2`, el workflow `.github/workflows/ejecutar-ae2.yml` ejecuta el notebook con
-Python 3.12 y guarda en el repositorio el notebook con resultados, los archivos modificados y `resumen.txt`.
+Configuré el workflow `.github/workflows/ejecutar-ae2.yml` para que, cada vez que subo cambios a la carpeta `AE2`, ejecute el notebook con
+Python 3.12 y guarde en el repositorio el notebook con resultados, los archivos modificados y `resumen.txt`.
 También se puede lanzar desde **Actions → Ejecutar AE2 → Run workflow**.
 
 ### Opción 2: local
