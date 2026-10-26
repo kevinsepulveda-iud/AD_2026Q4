@@ -1,6 +1,6 @@
 Resumen AE2 - Manejo de archivos CSV y JSON
 ======================================================================
-Generado: 2026-10-26 12:03
+Generado: 2026-10-26 12:28
 
 URL DE ORIGEN
 - CSV: https://huggingface.co/datasets/aptologia/barrios-mas-baratos-para-arrendar-colombia-2026/blob/main/data/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv
