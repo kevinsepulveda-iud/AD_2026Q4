@@ -35,7 +35,7 @@ AE2/
 
 ## Modificaciones realizadas
 
-**CSV:** se agrega la columna `canon_millones`, se cambia `Bogotá` por `Bogotá D.C.` y se eliminan los barrios con menos de 20 avisos.
+**CSV:** se agrega la columna `canon_millones`, se cambia `Bogotá` por `Bogotá D.C.` y se eliminan los barrios con menos de 35 avisos.
 
 **JSON:** se agrega el campo `antiguedad_anios`, se cambia el estado `No longer in circulation` por `Fuera de circulación` y se elimina el campo `photo`.
 
@@ -56,3 +56,16 @@ jupyter notebook AE2_manejo_archivos.ipynb
 ```
 Ejecutar todas las celdas en orden (**Kernel → Restart & Run All**). Las rutas son relativas a la carpeta `AE2`.
 Solo se usan las librerías estándar `csv`, `json` y `pathlib`.
+
+## Uso de inteligencia artificial
+
+De acuerdo con el reglamento estudiantil, declaro que en este trabajo usé **Claude (Anthropic)** como asistente de
+inteligencia artificial para:
+
+- Proponer la estructura de las clases y escribir una primera versión del código.
+- Revisar errores y probar el flujo completo.
+- Redactar la documentación (README y explicaciones de los notebooks).
+- Configurar la ejecución automática con GitHub Actions.
+
+Revisé, ejecuté y entiendo todo el código entregado. La elección de los datasets, las transformaciones aplicadas
+y los resultados los verifiqué antes de hacer la entrega.
