@@ -1,0 +1,61 @@
+name: Ejecutar AE2
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "AE2/**.py"
+      - "AE2/**.ipynb"
+      - "AE2/datos/originales/**"
+      - ".github/workflows/ejecutar-ae2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ejecutar-ae2
+  cancel-in-progress: false
+
+jobs:
+  ejecutar-notebook:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONWARNINGS: "ignore:IProgress not found"
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Ejecutar el notebook de la AE2
+        working-directory: AE2
+        run: |
+          jupyter nbconvert --to notebook --execute --inplace \
+            --ExecutePreprocessor.timeout=600 \
+            AE2_manejo_archivos.ipynb
+
+      - name: Guardar resultados en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AE2/AE2_manejo_archivos.ipynb AE2/resumen.txt AE2/datos/modificados
+          if git diff --cached --quiet; then
+            echo "No hubo cambios."
+            exit 0
+          fi
+          git commit -m "Ejecución automática AE2: notebook, archivos modificados y resumen.txt [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
