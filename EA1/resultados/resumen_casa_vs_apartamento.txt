@@ -1,6 +1,6 @@
 Resumen: precio m2 casa vs apartamento en ciudades de Colombia (2026)
 ======================================================================
-Generado: 2026-10-26 12:27
+Generado: 2026-10-26 12:33
 
 DIMENSIONES
 Filas: 38
