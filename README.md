@@ -1,7 +1,7 @@
 # AD_2026Q4 – Analítica de Datos
 
-Repositorio del curso **Analítica de Datos** – IU Digital de Antioquia
-Grupo: PREICA2602B020125 · AE_Grupo 12 · Docentes: Andrés Felipe Callejas y Mateo del Gallego
+En este repositorio guardo mis entregas del curso **Analítica de Datos** – IU Digital de Antioquia.
+Autor: Kevin Daniel Sepúlveda Giraldo · PREICA2602B020125 · Docentes: Andrés Felipe Callejas y Mateo del Gallego
 
 ## Contenido
 
@@ -20,15 +20,15 @@ Grupo: PREICA2602B020125 · AE_Grupo 12 · Docentes: Andrés Felipe Callejas y M
 | `EA1/resultados/resumen_casa_vs_apartamento.txt` | Resumen generado a partir del DataFrame transformado. |
 
 **Dataset:** [`aptologia/casa-vs-apartamento-precio-m2-ciudades-colombia-2026`](https://huggingface.co/datasets/aptologia/casa-vs-apartamento-precio-m2-ciudades-colombia-2026)
-(precio por m² de casas y apartamentos en ciudades de Colombia, 2026).
+(precio por m² de casas y apartamentos en ciudades de Colombia, 2026). Lo elegí porque es un tema colombiano actual y su tamaño permite subirlo sin problemas a GitHub.
 
 **Flujo:** clase de carga → DataFrame → transformaciones → clase de resumen → archivo `.txt`
 
 ## Ejecución
 
 ### Automática (GitHub Actions)
-Cada vez que se sube un cambio a la carpeta `EA1`, el workflow `.github/workflows/ejecutar-ea1.yml`
-instala las dependencias, ejecuta el notebook con Python 3.12 y guarda en el repositorio el notebook con
+Configuré el workflow `.github/workflows/ejecutar-ea1.yml` para que, cada vez que subo un cambio a la carpeta `EA1`,
+instale las dependencias, ejecute el notebook con Python 3.12 y guarde en el repositorio el notebook con
 sus resultados y el archivo `.txt`. También se puede lanzar a mano desde la pestaña **Actions → Ejecutar EA1 → Run workflow**.
 
 ### Local
