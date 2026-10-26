@@ -1,0 +1,40 @@
+Resumen AE2 - Manejo de archivos CSV y JSON
+======================================================================
+Generado: 2026-10-26 12:03
+
+URL DE ORIGEN
+- CSV: https://huggingface.co/datasets/aptologia/barrios-mas-baratos-para-arrendar-colombia-2026/blob/main/data/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv
+- JSON: https://huggingface.co/datasets/Vault-of-History/colombian-numismatic-collection/blob/main/colombian-coins.json
+
+ARCHIVO CSV - clase ManejadorCSV
+----------------------------------------------------------------------
+URL de origen:        https://huggingface.co/datasets/aptologia/barrios-mas-baratos-para-arrendar-colombia-2026/blob/main/data/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv
+Archivo importado:    datos/originales/barrios_mas_baratos_para_arrendar_colombia_2026_datos.csv
+Archivo guardado:     datos/modificados/barrios_arriendo_modificado.csv
+Registros importados: 145
+Registros guardados:  125
+Métodos utilizados:   importar, agregar_columna, actualizar_valor, eliminar_filas, guardar
+Modificaciones realizadas:
+  1. Se agregó la columna 'canon_millones' a 145 filas.
+  2. En la columna 'city' se cambió 'Bogotá' por 'Bogotá D.C.' (34 filas).
+  3. Se eliminaron 20 filas: barrios con menos de 35 avisos.
+Columnas finales:     city, barrio, avisos, canon_cop_mediana, canon_millones
+
+ARCHIVO JSON - clase ManejadorJSON
+----------------------------------------------------------------------
+URL de origen:        https://huggingface.co/datasets/Vault-of-History/colombian-numismatic-collection/blob/main/colombian-coins.json
+Archivo importado:    datos/originales/colombian-coins.json
+Archivo guardado:     datos/modificados/monedas_colombia_modificado.json
+Registros importados: 14
+Registros guardados:  14
+Métodos utilizados:   importar, agregar_campo, actualizar_valor, eliminar_campo, guardar
+Modificaciones realizadas:
+  1. Se agregó el campo 'antiguedad_anios' a 14 registros.
+  2. En el campo 'status' se cambió 'No longer in circulation' por 'Fuera de circulación' (14 registros).
+  3. Se eliminó el campo 'photo' de 14 registros.
+
+TOTALES
+----------------------------------------------------------------------
+Archivos procesados: 2
+Registros procesados en total: 159
+Clases utilizadas: ManejadorCSV, ManejadorJSON, GeneradorResumenTXT

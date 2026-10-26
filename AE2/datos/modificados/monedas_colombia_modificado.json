@@ -1,0 +1,581 @@
+[
+  {
+    "_id": "CO-1977-10C-PORTRAIT",
+    "type": "coin",
+    "year_of_issue": 1977,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 10,
+    "currency": "Colombian Peso",
+    "unit": "centavos",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA",
+      "portrait": "Francisco de Paula Santander",
+      "orientation": "facing right"
+    },
+    "reverse": {
+      "text": "10 CENTAVOS",
+      "design": "Laurel wreath"
+    },
+    "design": {
+      "description": "Right-facing portrait of Francisco de Paula Santander on the obverse; the reverse features the denomination within a laurel wreath.",
+      "main_element": "Portrait of Francisco de Paula Santander",
+      "colors": [
+        "silver-gray"
+      ],
+      "symbols": [
+        "laurel wreath"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#253",
+      "type": "10 Centavos, continuous legend; small letters"
+    },
+    "shape": "round",
+    "metal": "Nickel-clad steel",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 49
+  },
+  {
+    "_id": "CO-1971-50C-PORTRAIT",
+    "type": "coin",
+    "year_of_issue": 1971,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 50,
+    "currency": "Colombian Peso",
+    "unit": "centavos",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA",
+      "portrait": "Francisco de Paula Santander",
+      "orientation": "facing right"
+    },
+    "reverse": {
+      "text": "50 CENTAVOS",
+      "design": "Laurel wreath"
+    },
+    "design": {
+      "description": "Right-facing portrait of Francisco de Paula Santander on the obverse; the reverse features the denomination within a laurel wreath.",
+      "main_element": "Portrait of Francisco de Paula Santander",
+      "colors": [
+        "silver-gray"
+      ],
+      "symbols": [
+        "laurel wreath"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#244.1",
+      "type": "50 Centavos, 1970-1980"
+    },
+    "shape": "dodecagonal",
+    "metal": "Nickel-clad steel",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 55
+  },
+  {
+    "_id": "CO-1959-50C-ARMS",
+    "type": "coin",
+    "year_of_issue": 1959,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 50,
+    "currency": "Colombian Peso",
+    "unit": "centavos",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "LIBERTADOR SIMON BOLIVAR",
+      "portrait": "Simón Bolívar",
+      "orientation": "facing right"
+    },
+    "reverse": {
+      "text": "REPUBLICA DE COLOMBIA; LIBERTAD Y ORDEN; CINCUENTA CENTAVOS",
+      "design": "National coat of arms with condor and flags"
+    },
+    "design": {
+      "description": "Right-facing portrait of Simón Bolívar on the obverse; the reverse features the Colombian coat of arms with a condor and flags.",
+      "main_element": "Portrait of Simón Bolívar",
+      "colors": [
+        "silver-gray"
+      ],
+      "symbols": [
+        "condor",
+        "coat of arms",
+        "flags"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#217",
+      "type": "50 Centavos, 1958-1966"
+    },
+    "shape": "round",
+    "metal": "Copper-nickel",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 67
+  },
+  {
+    "_id": "CO-1956-10C-CALARCA",
+    "type": "coin",
+    "year_of_issue": 1956,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 10,
+    "currency": "Colombian Peso",
+    "unit": "centavos",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA",
+      "design": "National coat of arms with condor",
+      "date": "1956"
+    },
+    "reverse": {
+      "text": "DIEZ CENTAVOS; CALARCÁ",
+      "portrait": "Calarcá",
+      "orientation": "facing right"
+    },
+    "design": {
+      "description": "Colombian national coat of arms above the date on the obverse; right-facing portrait of Indigenous leader Calarcá on the reverse with the denomination.",
+      "main_element": "Portrait of Calarcá",
+      "colors": [
+        "silver-gray",
+        "green corrosion"
+      ],
+      "symbols": [
+        "coat of arms",
+        "condor",
+        "portrait of Calarcá"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#212.2",
+      "type": "10 Centavos, 1952-1966"
+    },
+    "shape": "round",
+    "metal": "Copper-nickel",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 70
+  },
+  {
+    "_id": "CO-1921-2C-LIBERTY",
+    "type": "coin",
+    "year_of_issue": 1921,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 2,
+    "currency": "Colombian Peso",
+    "unit": "centavos",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; 1921",
+      "portrait": "Liberty",
+      "orientation": "facing right"
+    },
+    "reverse": {
+      "text": "2 CENTAVOS",
+      "design": "Denomination within a decorative wreath"
+    },
+    "design": {
+      "description": "Right-facing allegorical female head representing Liberty on the obverse; the reverse features the denomination within a decorative wreath.",
+      "main_element": "Allegorical representation of Liberty",
+      "colors": [
+        "dark gray"
+      ],
+      "symbols": [
+        "Liberty"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#198",
+      "type": "2 Centavos, 1918-1947"
+    },
+    "shape": "round",
+    "metal": "Copper-nickel",
+    "mint": "United States Mint of Denver",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 105
+  },
+  {
+    "_id": "CO-1967-1PESO-BOLIVAR",
+    "type": "coin",
+    "year_of_issue": 1967,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 1,
+    "currency": "Colombian Peso",
+    "unit": "peso",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; 1967",
+      "portrait": "Simón Bolívar",
+      "orientation": "facing right"
+    },
+    "reverse": {
+      "text": "1 PESO",
+      "design": "Denomination within a garland"
+    },
+    "design": {
+      "description": "Right-facing portrait of Simón Bolívar on the obverse, with the country name above and the year below; the reverse features the denomination within a garland.",
+      "main_element": "Portrait of Simón Bolívar",
+      "colors": [
+        "dark gray",
+        "greenish"
+      ],
+      "symbols": [
+        "portrait",
+        "garland"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#229",
+      "type": "1 Peso, 1967"
+    },
+    "shape": "decagonal",
+    "metal": "Copper-nickel",
+    "mint": "Royal Mint (Tower Hill), London",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 59
+  },
+  {
+    "_id": "CO-1974-1PESO-CORN",
+    "type": "coin",
+    "year_of_issue": 1974,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 1,
+    "currency": "Colombian Peso",
+    "unit": "peso",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; 1974",
+      "portrait": "Simón Bolívar",
+      "orientation": "3/4 facing right"
+    },
+    "reverse": {
+      "text": "1 PESO",
+      "design": "Denomination flanked by two corn cobs"
+    },
+    "design": {
+      "description": "Three-quarter facing portrait of Simón Bolívar on the obverse; the reverse features the denomination flanked by two corn cobs.",
+      "main_element": "Portrait of Simón Bolívar",
+      "colors": [
+        "brown",
+        "rust"
+      ],
+      "symbols": [
+        "corn",
+        "agriculture"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#258.1",
+      "type": "1 Peso, 1974-1980; small date"
+    },
+    "shape": "round",
+    "metal": "Nickel brass",
+    "mint": "Stuttgart State Mint",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 52
+  },
+  {
+    "_id": "CO-1978-2PESO-BOLIVAR",
+    "type": "coin",
+    "year_of_issue": 1978,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 2,
+    "currency": "Colombian Peso",
+    "unit": "peso",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; 1978",
+      "portrait": "Simón Bolívar",
+      "orientation": "facing right"
+    },
+    "reverse": {
+      "text": "2 PESOS",
+      "design": "Olive branches surrounding the denomination"
+    },
+    "design": {
+      "description": "Right-facing portrait of Simón Bolívar on the obverse; the reverse features the denomination surrounded by olive branches.",
+      "main_element": "Portrait of Simón Bolívar",
+      "colors": [
+        "bronze-toned",
+        "brownish"
+      ],
+      "symbols": [
+        "olive branches"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#263",
+      "numista": "N#1351",
+      "type": "2 Pesos, 1977-1987"
+    },
+    "shape": "round",
+    "metal": "Copper-nickel",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 48
+  },
+  {
+    "_id": "CO-1982-20PESO-POPORO",
+    "type": "coin",
+    "year_of_issue": 1982,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 20,
+    "currency": "Colombian Peso",
+    "unit": "peso",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; POPORO QUIMBAYA MUSEO DEL ORO; 1982",
+      "design": "Poporo Quimbaya"
+    },
+    "reverse": {
+      "text": "20 PESOS",
+      "design": "National coat of arms with condor"
+    },
+    "design": {
+      "description": "The obverse features the Poporo Quimbaya, a pre-Columbian gold artifact, with the issuer and date; the reverse features the denomination and the Colombian national coat of arms with the condor.",
+      "main_element": "Poporo Quimbaya",
+      "colors": [
+        "golden-brass"
+      ],
+      "symbols": [
+        "Poporo Quimbaya",
+        "coat of arms",
+        "condor"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#271",
+      "type": "20 Pesos, 1982-1989"
+    },
+    "shape": "round",
+    "metal": "Aluminium bronze",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 44
+  },
+  {
+    "_id": "CO-1968-20C-SANTANDER",
+    "type": "coin",
+    "year_of_issue": 1968,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 20,
+    "currency": "Colombian Peso",
+    "unit": "centavos",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; 1968",
+      "portrait": "Francisco de Paula Santander",
+      "orientation": "facing right"
+    },
+    "reverse": {
+      "text": "20 CENTAVOS",
+      "design": "Denomination within a closed laurel wreath"
+    },
+    "design": {
+      "description": "Right-facing portrait of Francisco de Paula Santander on the obverse; the reverse features the denomination within a closed laurel wreath.",
+      "main_element": "Portrait of Francisco de Paula Santander",
+      "colors": [
+        "dark gray"
+      ],
+      "symbols": [
+        "portrait",
+        "laurel wreath"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#227",
+      "type": "20 Centavos, 1967-1969; continuous legend, big letters"
+    },
+    "shape": "round",
+    "metal": "Nickel-clad steel",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 58
+  },
+  {
+    "_id": "CO-1956-20C-BOLIVAR",
+    "type": "coin",
+    "year_of_issue": 1956,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 20,
+    "currency": "Colombian Peso",
+    "unit": "centavos",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; 1956",
+      "portrait": "Simón Bolívar",
+      "orientation": "facing right"
+    },
+    "reverse": {
+      "text": "VEINTE CENTAVOS",
+      "design": "Colombian coat of arms with 16 stars forming a semicircle below"
+    },
+    "design": {
+      "description": "Right-facing portrait of Simón Bolívar on the obverse with the date below; the reverse features the denomination above the Colombian coat of arms, with 16 stars forming a semicircle below.",
+      "main_element": "Portrait of Simón Bolívar",
+      "colors": [
+        "silver-gray"
+      ],
+      "symbols": [
+        "portrait",
+        "coat of arms",
+        "16 stars"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#215.1",
+      "type": "20 Centavos, 1956-1959; small date"
+    },
+    "shape": "round",
+    "metal": "Copper-nickel",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 70
+  },
+  {
+    "_id": "CO-1987-50PESO-CONSTITUTION",
+    "type": "coin",
+    "year_of_issue": 1987,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 50,
+    "currency": "Colombian Peso",
+    "unit": "peso",
+    "class": "Circulation",
+    "category": "Commemorative",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; 1987",
+      "design": "Commemorative design related to the National Constitution"
+    },
+    "reverse": {
+      "text": "50 PESOS",
+      "design": "Large denomination 50 with commemorative constitutional design"
+    },
+    "design": {
+      "description": "Commemorative 50-peso coin issued during the 1986-1989 series associated with Colombia's National Constitution, with a large denomination design.",
+      "main_element": "National Constitution commemorative design",
+      "colors": [
+        "golden-brass"
+      ],
+      "symbols": [
+        "constitutional symbolism"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#272",
+      "type": "50 Pesos, National Constitution, 1986-1989; 1987 large date"
+    },
+    "shape": "round",
+    "metal": "Nickel brass",
+    "mint": "Fábrica de Moneda de Ibagué, Colombia",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 39
+  },
+  {
+    "_id": "CO-1980-5PESO-POLICARPA",
+    "type": "coin",
+    "year_of_issue": 1980,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 5,
+    "currency": "Colombian Peso",
+    "unit": "peso",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; POLICARPA; 1980",
+      "portrait": "Policarpa Salavarrieta",
+      "orientation": "seated, facing right"
+    },
+    "reverse": {
+      "text": "5 PESOS",
+      "design": "Industrial buildings of the Barrancabermeja refinery"
+    },
+    "design": {
+      "description": "Seated portrait of Policarpa Salavarrieta facing right on the obverse; the reverse features industrial buildings of the Barrancabermeja refinery and the denomination.",
+      "main_element": "Portrait of Policarpa Salavarrieta",
+      "colors": [
+        "bronze-brown",
+        "green corrosion"
+      ],
+      "symbols": [
+        "Policarpa Salavarrieta",
+        "industrial refinery"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#268",
+      "type": "5 Pesos, 1980-1988"
+    },
+    "shape": "round",
+    "metal": "Copper-nickel",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 46
+  },
+  {
+    "_id": "CO-1982-10PESO-SAN-ANDRES",
+    "type": "coin",
+    "year_of_issue": 1982,
+    "country": "Colombia",
+    "country_code": "CO",
+    "denomination": 10,
+    "currency": "Colombian Peso",
+    "unit": "peso",
+    "class": "Circulation",
+    "category": "Definitive",
+    "obverse": {
+      "text": "REPUBLICA DE COLOMBIA; 1982; CORDOBA",
+      "design": "Monument to José María Córdova within an octagonal rim"
+    },
+    "reverse": {
+      "text": "ISLAS DE SAN ANDRES Y PROVIDENCIA; 13°20 81°22; 81°40; 10 PESOS COLOMBIA",
+      "design": "Map of the San Andrés and Providencia Islands with geographic coordinates"
+    },
+    "design": {
+      "description": "The obverse features a monument to José María Córdova within an octagonal rim; the reverse depicts a map of the San Andrés and Providencia Islands with geographic coordinates and the denomination.",
+      "main_element": "Map of San Andrés and Providencia",
+      "colors": [
+        "golden-brass"
+      ],
+      "symbols": [
+        "map",
+        "Caribbean islands",
+        "José María Córdova monument"
+      ]
+    },
+    "numismatic_reference": {
+      "catalog": "KM#270",
+      "numista": "N#2435",
+      "type": "10 Pesos, 1981-1989"
+    },
+    "shape": "round",
+    "metal": "Nickel brass",
+    "mint": "Bogotá (Casa de la moneda)",
+    "status": "Fuera de circulación",
+    "antiguedad_anios": 44
+  }
+]
