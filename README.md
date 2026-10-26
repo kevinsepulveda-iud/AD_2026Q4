@@ -1,7 +1,7 @@
 # AD_2026Q4 – Analítica de Datos
 
 Repositorio del curso **Analítica de Datos** – IU Digital de Antioquia
-Grupo: PREICA2602B020125 · AE_Grupo 12 · Docente: Andrés Felipe Callejas
+Grupo: PREICA2602B020125 · AE_Grupo 12 · Docentes: Andrés Felipe Callejas y Mateo del Gallego
 
 ## Contenido
 
@@ -40,3 +40,16 @@ cd EA1
 jupyter notebook EA1_carga_y_resumen.ipynb
 ```
 Ejecutar las celdas en orden (Python 3.12).
+
+## Uso de inteligencia artificial
+
+De acuerdo con el reglamento estudiantil, declaro que en este trabajo usé **Claude (Anthropic)** como asistente de
+inteligencia artificial para:
+
+- Proponer la estructura de las clases y escribir una primera versión del código.
+- Revisar errores y probar el flujo completo.
+- Redactar la documentación (README y explicaciones de los notebooks).
+- Configurar la ejecución automática con GitHub Actions.
+
+Revisé, ejecuté y entiendo todo el código entregado. La elección de los datasets, las transformaciones aplicadas
+y los resultados los verifiqué antes de hacer la entrega.
