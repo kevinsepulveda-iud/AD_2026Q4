@@ -1,0 +1,146 @@
+city,barrio,avisos,canon_cop_mediana
+Bogotá,Madelena,30,1300000.0
+Jamundí,Parque Natura,33,1300000.0
+Barranquilla,Alameda del Río,156,1317000.0
+El Carmen de Viboral,El Carmen de Viboral,39,1400000.0
+Bogotá,Fontibon,81,1450000.0
+Bogotá,Castilla,35,1450600.0
+Medellín,San Antonio de Prado,53,1500000.0
+Chía,Chia,31,1550000.0
+Cali,Bochalema,51,1550000.0
+Bogotá,El Redil,30,1550000.0
+Bogotá,Mirandela,33,1552000.0
+Bogotá,Lagos de Torca,87,1600000.0
+Medellín,Buenos Aires,38,1600000.0
+Rionegro,Cimarronas,43,1600000.0
+Cali,Valle del Lili,59,1650000.0
+Bogotá,Hayuelos,30,1690000.0
+Barranquilla,Ciudad Mallorquin,112,1700000.0
+Rionegro,Fontibon,89,1700000.0
+Barranquilla,El Porvenir,36,1750000.0
+Medellín,Robledo,94,1775000.0
+Barranquilla,Paraiso,39,1842900.0
+Medellín,Boston,52,1850000.0
+Rionegro,Centro,77,1900000.0
+Bogotá,Montevideo,37,1900000.0
+Bogotá,San José de Bavaria,41,1950000.0
+Bogotá,Colina Campestre,44,2000000.0
+Bogotá,La Felicidad,37,2000000.0
+Barranquilla,Miramar,65,2000000.0
+Sabaneta,María Auxiliadora,31,2000000.0
+Barranquilla,San Vicente,35,2100000.0
+Medellín,Santa Monica,31,2200000.0
+Rionegro,Los Colegios,96,2400000.0
+Medellín,La America,52,2400000.0
+Medellín,Calasanz,126,2425000.0
+Rionegro,El Porvenir,249,2450000.0
+La Estrella,La Aldea,74,2500000.0
+Barranquilla,Altos de Riomar,47,2500000.0
+Rionegro,Santa Ana,75,2500000.0
+Rionegro,San Antonio,70,2500000.0
+Pereira,Alamos,56,2500000.0
+Medellín,Simón Bolívar,46,2525000.0
+Cartagena,Manzanillo,45,2540000.0
+Cartagena,Manzanillo del Mar,39,2587500.0
+Medellín,La Candelaria,37,2600000.0
+Rionegro,San Antonio de Pereira,84,2600000.0
+Sabaneta,Calle Larga,45,2600000.0
+Sabaneta,San José,62,2650000.0
+Medellín,La Castellana,54,2699000.0
+Rionegro,Barro Blanco,126,2725000.0
+Sabaneta,Cañaveralejo,34,2800000.0
+Sabaneta,Entreamigos,44,2800000.0
+Bogotá,Cedritos,108,2850000.0
+Sabaneta,Monteazul,77,2850000.0
+Medellín,Loma de los Bernal,44,2875000.0
+Medellín,Belén,199,2895000.0
+Pereira,Los Alpes,40,2900000.0
+Itagüí,Suramérica,31,2900000.0
+Medellín,Belén la Palma,33,2900000.0
+Pereira,Pinares,103,2950000.0
+Cartagena,Serena del Mar,229,3000000.0
+Medellín,San German,39,3000000.0
+Rionegro,Rionegro,168,3000000.0
+Envigado,Las Antillas,34,3000000.0
+Barranquilla,Villa Santos,103,3000000.0
+Sabaneta,La Doctora,59,3000000.0
+Sabaneta,Pan de Azucar,85,3000000.0
+Sabaneta,Prados de Sabaneta,50,3000000.0
+El Retiro,Pantanillo,41,3000000.0
+Medellín,Guayabal,36,3100000.0
+Sabaneta,Las Lomitas,102,3100000.0
+Sabaneta,Mayorca,57,3200000.0
+Sabaneta,Sabaneta,86,3200000.0
+Barranquilla,Riomar,50,3200000.0
+Sabaneta,Aves María,52,3300000.0
+Rionegro,Llano Grande,111,3300000.0
+Medellín,Laureles,418,3350000.0
+Medellín,Conquistadores,44,3400000.0
+Envigado,El Trianon,33,3500000.0
+Envigado,El Chingui,33,3500000.0
+Medellín,San Diego,59,3500000.0
+Pereira,Cerritos,69,3500000.0
+Bogotá,Centro Internacional,37,3504000.0
+Barranquilla,Altos del Prado,38,3550000.0
+Barranquilla,Alto Prado,32,3550000.0
+Envigado,Camino Verde,86,3575000.0
+Bogotá,Chapinero Alto,43,3600000.0
+Medellín,Loma del Indio,90,3600000.0
+Envigado,Las Vegas,65,3600000.0
+Envigado,La Abadia,38,3850000.0
+Envigado,Otraparte,41,3850000.0
+Cartagena,Marbella,52,3850000.0
+Bogotá,Ciudad Salitre,34,3868000.0
+El Retiro,Santa Elena,54,3900000.0
+Bogotá,Chapinero,69,3950000.0
+Bogotá,Santa Barbara Occidental,38,4034238.5
+Medellín,Patio Bonito,68,4100000.0
+Bogotá,Bella Suiza,40,4150000.0
+Envigado,Mesa,45,4150000.0
+Medellín,Vía las Palmas,59,4200000.0
+Medellín,Las Palmas,139,4200000.0
+Envigado,Escobero,69,4200000.0
+Bogotá,Santa Barbara Central,45,4200000.0
+Bogotá,Santa Barbara,109,4300000.0
+Envigado,El Esmeraldal,94,4300000.0
+Envigado,Loma del Escobero,138,4300000.0
+Envigado,Loma del Esmeraldal,200,4300000.0
+Envigado,Cumbres,171,4300000.0
+Envigado,Loma de las Brujas,113,4300000.0
+Envigado,La Pradera,36,4325000.0
+Envigado,Loma del Chocho,117,4350000.0
+Envigado,Envigado,461,4450000.0
+Bogotá,Santa Paula,35,4500000.0
+Cartagena,Crespo,39,4500000.0
+Medellín,Ciudad del Río,152,4500000.0
+Cartagena,La Boquilla,92,4550000.0
+Cartagena,Bocagrande,58,4600000.0
+Envigado,Loma Benedictinos,69,4650000.0
+Envigado,Zuñiga,70,4750000.0
+Medellín,Santa María de los Angeles,110,4800000.0
+Medellín,Castropol,187,5200000.0
+Bogotá,Chicó Navarra,30,5275000.0
+Bogotá,San Patricio,45,5300000.0
+Bogotá,La Carolina,35,5500000.0
+Bogotá,Antiguo Country,36,5500000.0
+Medellín,Altos del Poblado,114,5500000.0
+Medellín,El Poblado,1879,5500000.0
+El Retiro,Los Salados,81,5600000.0
+Bogotá,Chico Navarra,43,5690000.0
+Medellín,Alejandria,36,5940382.0
+Medellín,Milla de Oro,32,5975000.0
+Medellín,Poblado,214,6000000.0
+Medellín,Los Balsos,153,6000000.0
+Rionegro,Sajonia,66,6050000.0
+Medellín,Lalinde,94,6225000.0
+Medellín,El Campestre,40,6900000.0
+Medellín,El Tesoro,92,7000000.0
+Bogotá,El Virrey,43,7300000.0
+Bogotá,Chico,97,7500000.0
+Bogotá,El Chico,34,7550000.0
+Bogotá,Chico Norte,159,7700000.0
+Medellín,San Lucas,107,7900000.0
+Bogotá,Los Rosales,72,8455000.0
+Bogotá,El Nogal,34,8500000.0
+Bogotá,Chico Reservado,66,8950000.0
+Bogotá,La Cabrera,63,12000000.0
