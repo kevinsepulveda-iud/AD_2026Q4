@@ -1,4 +1,6 @@
 pandas==2.2.3
+numpy
+matplotlib
 datasets
 notebook==7.2.3
 nbconvert

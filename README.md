@@ -6,6 +6,7 @@ Kevin Daniel Sepúlveda Giraldo · IU Digital de Antioquia · PREICA2602B020125
 |---|---|
 | [`EA1/`](EA1) | EA1 – Carga y creación de dataset |
 | [`AE2/`](AE2) | EA2 – Manejo de archivos y clases |
+| [`EA3_comparacion_climatica/`](EA3_comparacion_climatica) | EA3 – Comparación climática Medellín vs. Madrid ([detalle](EA3_comparacion_climatica/README.md)) |
 
 ## EA1 – Carga y creación de dataset
 
