@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Cuándo se parece Madrid a Medellín?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+/* Layout: cabecera con la pregunta, barra de filtros, fila de indicadores, dos gráficas y tabla de detalle */
+:root{
+  --bg:#f4f6f3; --card:#ffffff; --ink:#1d2622; --muted:#5f6b66; --line:#dde3df;
+  --med:#1f7a5a;   /* Medellín: verde montaña */
+  --mad:#c2541b;   /* Madrid: terracota */
+  --hit:#e2b100;   /* día parecido */
+  --display:"Fraunces", Georgia, serif; --body:"IBM Plex Sans", "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121715;--card:#1b2220;--ink:#e8eeeb;--muted:#9aa8a2;--line:#2c3532;--med:#4cc195;--mad:#f08a52;--hit:#f2cc45;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121715;--card:#1b2220;--ink:#e8eeeb;--muted:#9aa8a2;--line:#2c3532;--med:#4cc195;--mad:#f08a52;--hit:#f2cc45;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+main{max-width:1180px;margin:0 auto;padding:28px clamp(16px,3vw,32px) 48px;display:grid;gap:18px}
+h1{font-family:var(--display);font-size:clamp(26px,3.4vw,36px);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:15px;margin:0 0 10px;font-weight:600}
+.sub{color:var(--muted);margin:6px 0 0;max-width:75ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.filters{display:flex;flex-wrap:wrap;gap:18px;align-items:end}
+.filters label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:4px}
+select,input[type=range]{font:inherit}
+select{padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.tol{min-width:240px}
+.tol output{font-weight:600;font-variant-numeric:tabular-nums}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.kpi .v{font-family:var(--display);font-size:32px;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:12px;color:var(--muted);font-weight:600}
+.kpi .n{font-size:12px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:12px}
+.chart{position:relative;height:300px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap;margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-2px}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600;font-size:12px}
+.scroll{max-height:280px;overflow:auto}
+.note{font-size:13px;color:var(--muted)}
+.warn{border-left:4px solid var(--mad)}
+footer{font-size:12px;color:var(--muted)}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>¿En qué meses de 2019 la temperatura de Madrid se pareció a la de Medellín?</h1>
+    <p class="sub">Comparo la temperatura media diaria (TAVG) de las estaciones Olaya Herrera (Medellín) y Retiro (Madrid) de NOAA GHCN-Daily. Un día es <b>parecido</b> cuando la diferencia entre las dos ciudades está dentro de la tolerancia que elijas.</p>
+  </header>
+
+  <section class="card filters" aria-label="Filtros">
+    <div class="tol">
+      <label for="tol">Tolerancia: <output id="tolOut">±2,0 °C</output></label>
+      <input id="tol" type="range" min="0.5" max="5" step="0.5" value="2">
+    </div>
+    <div><label for="desde">Desde</label><select id="desde"></select></div>
+    <div><label for="hasta">Hasta</label><select id="hasta"></select></div>
+    <div class="chk"><input id="seco" type="checkbox"><label for="seco" style="margin:0;font-size:14px;color:var(--ink)">Contar solo días sin lluvia en Madrid (&lt; 1 mm)</label></div>
+  </section>
+
+  <section class="kpis" aria-live="polite">
+    <div class="card kpi"><div class="l">Días comparables</div><div class="v" id="kComp">–</div><div class="n">con TAVG en las dos ciudades</div></div>
+    <div class="card kpi"><div class="l">Días parecidos</div><div class="v" id="kPar">–</div><div class="n" id="kPct">–</div></div>
+    <div class="card kpi"><div class="l">Mes con más días parecidos</div><div class="v" id="kMes">–</div><div class="n" id="kMesN">–</div></div>
+    <div class="card kpi"><div class="l">Diferencia media (Madrid − Medellín)</div><div class="v" id="kDif">–</div><div class="n">en el periodo filtrado</div></div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>Temperatura media diaria</h2>
+      <div class="chart"><canvas id="cDia" aria-label="Temperatura media diaria de las dos ciudades"></canvas></div>
+      <div class="legend"><span><i style="background:var(--med)"></i>Medellín</span><span><i style="background:var(--mad)"></i>Madrid</span><span><i style="background:var(--hit)"></i>Día parecido</span></div>
+    </div>
+    <div class="card">
+      <h2>Días parecidos por mes</h2>
+      <div class="chart"><canvas id="cMes" aria-label="Días parecidos por mes"></canvas></div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>Días parecidos en el periodo</h2>
+      <div class="scroll"><table><thead><tr><th>Fecha</th><th>Medellín °C</th><th>Madrid °C</th><th>Diferencia</th><th>Lluvia Madrid mm</th></tr></thead><tbody id="tDias"></tbody></table></div>
+    </div>
+    <div class="card warn">
+      <h2>Calidad de los datos</h2>
+      <p class="note" id="calidad">Cargando…</p>
+      <p class="note">Los días sin TAVG en alguna de las dos ciudades no se cuentan (no se rellenan con 0 ni con promedios). Es un solo año y una estación por ciudad, así que no representa el clima típico.</p>
+    </div>
+  </section>
+
+  <footer>Fuente: NOAA NCEI, GHCN-Daily, 2019 (mismos archivos de la EA3, carpeta <code>EA3_comparacion_climatica/datos</code>). Dashboard de la EA4 de Analítica de Datos · Kevin Daniel Sepúlveda Giraldo · IU Digital de Antioquia.</footer>
+</main>
+
+<script>
+const MESES=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const num=s=>{const t=(s||"").replace(/"/g,"").trim();return t===""?null:Number(t)};
+const fmt=(x,d=1)=>x.toLocaleString("es-CO",{minimumFractionDigits:d,maximumFractionDigits:d});
+
+// Lee el CSV de NOAA. Los campos vacíos quedan como null (no como 0).
+async function leer(url){
+  const txt=await (await fetch(url)).text();
+  const [cab,...filas]=txt.trim().split(/\r?\n/);
+  const col=cab.replace(/"/g,"").split(",");
+  return filas.map(f=>{const v=f.split(",");const o={};col.forEach((c,i)=>o[c]=c==="DATE"||c==="STATION"?v[i].replace(/"/g,""):num(v[i]));return o});
+}
+
+let dias=[], gDia, gMes;
+async function iniciar(){
+  const base="../EA3_comparacion_climatica/datos/";
+  const [med,mad]=await Promise.all([leer(base+"medellin.csv"),leer(base+"madrid.csv")]);
+  const porFecha=new Map(mad.map(r=>[r.DATE,r]));
+  // Une las dos ciudades por fecha
+  dias=med.map(a=>{const b=porFecha.get(a.DATE)||{};return{fecha:a.DATE,mes:Number(a.DATE.slice(5,7)),med:a.TAVG,mad:b.TAVG??null,lluviaMad:b.PRCP??null}});
+  const faltMed=med.filter(r=>r.TAVG===null).length, faltMad=mad.filter(r=>r.TAVG===null).length;
+  const sinLluviaMad=mad.filter(r=>r.PRCP===null).length;
+  document.getElementById("calidad").textContent=`Días en 2019: ${dias.length}. Sin TAVG: ${faltMed} en Medellín y ${faltMad} en Madrid. Sin dato de lluvia en Madrid: ${sinLluviaMad} (esos días no cuentan cuando activas el filtro de días secos).`;
+  const d=document.getElementById("desde"),h=document.getElementById("hasta");
+  MESES.forEach((m,i)=>{d.add(new Option(m,i+1));h.add(new Option(m,i+1))});
+  h.value=12;
+  ["tol","desde","hasta","seco"].forEach(id=>document.getElementById(id).addEventListener("input",pintar));
+  pintar();
+}
+
+function pintar(){
+  // Si la librería de gráficas no cargó (sin internet o CDN bloqueado), los indicadores y la tabla siguen funcionando
+  const hayGraficas=typeof Chart!=="undefined";
+  document.querySelectorAll(".chart").forEach(c=>{if(!hayGraficas&&!c.dataset.aviso){c.dataset.aviso=1;c.innerHTML='<p class="note">No se pudo cargar la librería de gráficas (Chart.js). Los indicadores y la tabla sí están actualizados.</p>'}});
+  const tol=Number(document.getElementById("tol").value);
+  let m1=Number(document.getElementById("desde").value), m2=Number(document.getElementById("hasta").value);
+  if(m1>m2){[m1,m2]=[m2,m1]}
+  const seco=document.getElementById("seco").checked;
+  document.getElementById("tolOut").textContent="±"+fmt(tol)+" °C";
+
+  const enRango=dias.filter(x=>x.mes>=m1&&x.mes<=m2);
+  const comp=enRango.filter(x=>x.med!==null&&x.mad!==null);
+  const esPar=x=>Math.abs(x.mad-x.med)<=tol && (!seco || (x.lluviaMad!==null && x.lluviaMad<1));
+  const par=comp.filter(esPar);
+
+  const porMes=MESES.map((_,i)=>par.filter(x=>x.mes===i+1).length);
+  const visibles=porMes.map((v,i)=>i+1>=m1&&i+1<=m2?v:0);
+  const max=Math.max(...visibles), iMax=visibles.indexOf(max);
+  const dif=comp.reduce((s,x)=>s+(x.mad-x.med),0)/(comp.length||1);
+
+  document.getElementById("kComp").textContent=comp.length;
+  document.getElementById("kPar").textContent=par.length;
+  document.getElementById("kPct").textContent=comp.length?fmt(100*par.length/comp.length)+" % de los comparables":"–";
+  document.getElementById("kMes").textContent=max>0?MESES[iMax]:"Ninguno";
+  document.getElementById("kMesN").textContent=max>0?`${max} días parecidos`:"no hay días parecidos";
+  document.getElementById("kDif").textContent=(dif>0?"+":"")+fmt(dif)+" °C";
+
+  document.getElementById("tDias").innerHTML=par.map(x=>`<tr><td>${x.fecha}</td><td>${fmt(x.med)}</td><td>${fmt(x.mad)}</td><td>${(x.mad-x.med>0?"+":"")+fmt(x.mad-x.med)}</td><td>${x.lluviaMad===null?"sin dato":fmt(x.lluviaMad)}</td></tr>`).join("")||`<tr><td colspan="5">No hay días parecidos con estos filtros.</td></tr>`;
+
+  const etiquetas=enRango.map(x=>x.fecha.slice(5));
+  const puntos=enRango.map(x=>x.med!==null&&x.mad!==null&&esPar(x)?x.mad:null);
+  const grid=css("--line"), txt=css("--muted");
+  const ejes={x:{ticks:{color:txt,maxTicksLimit:12},grid:{display:false}},y:{ticks:{color:txt},grid:{color:grid},title:{display:true,text:"°C",color:txt}}};
+  const dsDia=[
+    {label:"Medellín",data:enRango.map(x=>x.med),borderColor:css("--med"),borderWidth:1.5,pointRadius:0,spanGaps:false},
+    {label:"Madrid",data:enRango.map(x=>x.mad),borderColor:css("--mad"),borderWidth:1.5,pointRadius:0,spanGaps:false},
+    {label:"Día parecido",data:puntos,showLine:false,pointRadius:4,pointBackgroundColor:css("--hit"),pointBorderColor:css("--hit")}];
+  if(!hayGraficas) return;
+  if(gDia){gDia.data.labels=etiquetas;gDia.data.datasets=dsDia;gDia.update()}
+  else gDia=new Chart(document.getElementById("cDia"),{type:"line",data:{labels:etiquetas,datasets:dsDia},options:{maintainAspectRatio:false,animation:false,interaction:{mode:"index",intersect:false},plugins:{legend:{display:false}},scales:ejes}});
+
+  const colores=MESES.map((_,i)=>i+1>=m1&&i+1<=m2?css("--hit"):css("--line"));
+  if(gMes){gMes.data.datasets[0].data=porMes;gMes.data.datasets[0].backgroundColor=colores;gMes.update()}
+  else gMes=new Chart(document.getElementById("cMes"),{type:"bar",data:{labels:MESES,datasets:[{label:"Días parecidos",data:porMes,backgroundColor:colores,borderRadius:4}]},options:{maintainAspectRatio:false,animation:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:txt},grid:{display:false}},y:{beginAtZero:true,ticks:{color:txt,precision:0},grid:{color:grid}}}}});
+}
+iniciar().catch(e=>{document.getElementById("calidad").textContent="No pude cargar los datos: "+e.message});
+</script>
+</body>
+</html>
